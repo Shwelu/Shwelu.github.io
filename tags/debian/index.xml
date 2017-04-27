@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Shweta Luthra</copyright>
-    <lastBuildDate>Mon, 10 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/debian/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to install Julia on Debian 8.5</title>
       <link>https://shwelu.github.io/post/install-julia-on-debian/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://shwelu.github.io/post/install-julia-on-debian/</guid>
       <description>
