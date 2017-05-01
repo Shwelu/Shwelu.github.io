@@ -200,7 +200,9 @@
 
 <h3 id="installation">Installation</h3>
 
-<p>For Julia, there exists a <strong>Personal Package Archive (PPA)</strong>. <strong>PPA</strong> allows package developers to upload Ubuntu source packages to be built and published as an apt repository by <a href="https://help.launchpad.net/Packaging/PPA" target="_blank">Launchpad</a>. Therefore default installation command <code>sudo apt-get install</code> may not work out-of-the-box on some Linux distros such as Debian.</p>
+<p>Debian does not provide the latest Julia version in its default software repositories. Therefore default installation command <code>sudo apt-get install</code> may not work out of the box on some Linux distros such as Debian.</p>
+
+<p>For Julia, there exists a  community-maintained <strong>Personal Package Archive (PPA)</strong>. <strong>PPA</strong> allows package developers to upload Ubuntu source packages to be built and published as an apt repository by <a href="https://help.launchpad.net/Packaging/PPA" target="_blank">Launchpad</a>.</p>
 
 <p>Before installing <code>software-properties-common</code> package, update the apt package index to download information about the new packages:</p>
 
@@ -212,13 +214,15 @@
 <pre><code>sudo apt-get install software-properties-common
 </code></pre>
 
-<p>you can now add the repository for Julia and its dependencies:</p>
+<p>This command installs the Software Properties Common package that includes the  add-
+apt-repository binary. Now you are ready to add the custom <strong>PPA</strong>. Add the repository for Julia and its dependencies:</p>
 
 <pre><code>sudo add-apt-repository ppa:staticfloat/juliareleases   
 sudo add-apt-repository ppa:staticfloat/julia-deps
 </code></pre>
 
-<p>Now you are ready to install Julia:</p>
+<p>Enter your account password if prompted.<br />
+Now you are ready to install Julia:</p>
 
 <pre><code>sudo apt-get install julia
 sudo apt-get update

@@ -26,7 +26,9 @@
 
 &lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
 
-&lt;p&gt;For Julia, there exists a &lt;strong&gt;Personal Package Archive (PPA)&lt;/strong&gt;. &lt;strong&gt;PPA&lt;/strong&gt; allows package developers to upload Ubuntu source packages to be built and published as an apt repository by &lt;a href=&#34;https://help.launchpad.net/Packaging/PPA&#34; target=&#34;_blank&#34;&gt;Launchpad&lt;/a&gt;. Therefore default installation command &lt;code&gt;sudo apt-get install&lt;/code&gt; may not work out-of-the-box on some Linux distros such as Debian.&lt;/p&gt;
+&lt;p&gt;Debian does not provide the latest Julia version in its default software repositories. Therefore default installation command &lt;code&gt;sudo apt-get install&lt;/code&gt; may not work out of the box on some Linux distros such as Debian.&lt;/p&gt;
+
+&lt;p&gt;For Julia, there exists a  community-maintained &lt;strong&gt;Personal Package Archive (PPA)&lt;/strong&gt;. &lt;strong&gt;PPA&lt;/strong&gt; allows package developers to upload Ubuntu source packages to be built and published as an apt repository by &lt;a href=&#34;https://help.launchpad.net/Packaging/PPA&#34; target=&#34;_blank&#34;&gt;Launchpad&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Before installing &lt;code&gt;software-properties-common&lt;/code&gt; package, update the apt package index to download information about the new packages:&lt;/p&gt;
 
@@ -38,13 +40,15 @@
 &lt;pre&gt;&lt;code&gt;sudo apt-get install software-properties-common
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;you can now add the repository for Julia and its dependencies:&lt;/p&gt;
+&lt;p&gt;This command installs the Software Properties Common package that includes the  add-
+apt-repository binary. Now you are ready to add the custom &lt;strong&gt;PPA&lt;/strong&gt;. Add the repository for Julia and its dependencies:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:staticfloat/juliareleases   
 sudo add-apt-repository ppa:staticfloat/julia-deps
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Now you are ready to install Julia:&lt;/p&gt;
+&lt;p&gt;Enter your account password if prompted.&lt;br /&gt;
+Now you are ready to install Julia:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install julia
 sudo apt-get update
