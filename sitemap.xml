@@ -14,6 +14,15 @@
     
     <url>
     
+      <loc>https://shwelu.github.io/post/transfer-webpages-to-web-server/</loc>
+      <lastmod>2017-04-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://shwelu.github.io/tags/academic/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -62,6 +71,26 @@
     <url>
     
       <loc>https://shwelu.github.io/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shwelu.github.io/tags/putty/</loc>
+      <lastmod>2017-04-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://shwelu.github.io/tags/sftp/</loc>
+      <lastmod>2017-04-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

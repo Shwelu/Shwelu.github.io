@@ -68,5 +68,135 @@ sudo apt-get update
 </description>
     </item>
     
+    <item>
+      <title>How to send webpages to VPS using PuTTY</title>
+      <link>https://shwelu.github.io/post/transfer-webpages-to-web-server/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://shwelu.github.io/post/transfer-webpages-to-web-server/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This tutorial will guide you how to serve your webpages or host a static website
+from a VPS with LAMP (or LEMP) stack installed.
+It can be considered as the next step to &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04&#34; target=&#34;_blank&#34;&gt;this tutorial&lt;/a&gt; or &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04&#34; target=&#34;_blank&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A VPS with LAMP (LEMP) stack installed&lt;/li&gt;
+&lt;li&gt;username and password for an addon user with sudo user previleges for the VPS&lt;/li&gt;
+&lt;li&gt;The tutorial assumes that you know how to connect to the remote server using PuTTY.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-1-install-putty&#34;&gt;Step 1: Install PuTTY&lt;/h3&gt;
+
+&lt;p&gt;If you are on windows, you might have used Putty to connect to your VPS.
+However to send the file to the remote server, we need &lt;code&gt;psftp&lt;/code&gt; which is a
+putty utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the &lt;code&gt;psftp&lt;/code&gt; individually,
+or install the putty binary with all of its utilities included. We will choose the latter for this tutorial.&lt;/p&gt;
+
+&lt;p&gt;Go to the &lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html&#34; target=&#34;_blank&#34;&gt;page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;(/static/img/images-posts/putty-download-page.jpg)&#34; alt=&#34;Putty download page&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Choose the appropriate binary (32-bit or 64-bit) according to architectue of your Windows.
+If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too.Install the Putty, and make sure the &lt;code&gt;psftp&lt;/code&gt; is on the &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;transfer-the-files&#34;&gt;Transfer the files&lt;/h3&gt;
+
+&lt;p&gt;Open cmd on Windows and move to the directory where you have saved your html files&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd C:\path\to\your\html-files
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and &lt;code&gt;zip&lt;/code&gt; your static website files (including the &lt;code&gt;index.html&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\path\to\your\html-files&amp;gt;zip -r webpages.zip * 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Type &lt;code&gt;psftp&lt;/code&gt; on cmd:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C:\path\to\your\html-files&amp;gt;psftp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It will launch &lt;code&gt;psftp&lt;/code&gt; prompt.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;images-posts/cmd-putty.jpg?raw=true&#34; alt=&#34;psftp prompt&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psftp: no hostname specified; use &amp;quot;open host.name&amp;quot; to connect
+psftp&amp;gt; _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enter user_name and server_IP:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psftp&amp;gt; open demo@111.111.111.111
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will get the prompt to input the password.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Using username &amp;quot;demo&amp;quot;.
+demo@111.111.111.111&#39;s password:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enter the password for the sudo user.
+If authentication is successful, prompt will move to the home directory of the demo user on the remote server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Remote working directory is /home/demo
+psftp&amp;gt; _
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Transfer the zip file to the remote server&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psftp&amp;gt; put file_name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you get the following output, your zip file has been successfully trasferred to the remote server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;local:file_name =&amp;gt; remote:/home/demo/file_name
+psftp&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you can see the zip file in the directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psftp&amp;gt;DIR
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;output will be similar to the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...
+
+d----         26-Apr-17   9:21 PM            python                            
+-a---         30-Apr-17   9:21 PM       1568 index.xml                         
+-a---         06-May-17   2:04 PM      31896 webpages.zip
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;move-the-zip-file-to-the-webroot-directory&#34;&gt;Move the zip file to the webroot directory&lt;/h3&gt;
+
+&lt;p&gt;Now connect to the remote server using PuTTY&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;(/static/img/images-posts/putty-terminal.jpg)&#34; alt=&#34;putty-terminal&#34; /&gt;
+and move the zip file to the  webroot directory&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; mv webpages.zip /var/www/html/
+ cd /var/www/html/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Change the name of the already existing index.html file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mv index.html index1.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now unzip the zip file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;unzip webpages.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Test your site by typing the &lt;code&gt;http://ip_address&lt;/code&gt; of the server in the browser.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

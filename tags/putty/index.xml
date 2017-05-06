@@ -1,72 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shweta Luthra on Shweta Luthra</title>
-    <link>https://shwelu.github.io/</link>
-    <description>Recent content in Shweta Luthra on Shweta Luthra</description>
+    <title>Putty on Shweta Luthra</title>
+    <link>https://shwelu.github.io/tags/putty/</link>
+    <description>Recent content in Putty on Shweta Luthra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Shweta Luthra</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>How to install Julia on Debian 8.5</title>
-      <link>https://shwelu.github.io/post/install-julia-on-debian/</link>
-      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://shwelu.github.io/post/install-julia-on-debian/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Introduced in 2012, Julia is an interactive language which can be used to quickly prototype a software solution as well as to write high performance code.  Using &lt;strong&gt;Low Level Virtual   Machine Just in Time (LLVM JIT)&lt;/strong&gt; compiler technologies, Julia combines the expressive power of high level languages such as R or Python with the raw performance of statically typed and compiled languages such as C or FORTRAN.&lt;/p&gt;
-
-&lt;p&gt;This short tutorial will guide you how to install Julia on Debian.&lt;/p&gt;
-
-&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
-
-&lt;p&gt;Debian does not provide the latest Julia version in its default software repositories. Therefore default installation command &lt;code&gt;sudo apt-get install&lt;/code&gt; may not work out of the box on some Linux distros such as Debian.&lt;/p&gt;
-
-&lt;p&gt;For Julia, there exists a  community-maintained &lt;strong&gt;Personal Package Archive (PPA)&lt;/strong&gt;. &lt;strong&gt;PPA&lt;/strong&gt; allows package developers to upload Ubuntu source packages to be built and published as an apt repository by &lt;a href=&#34;https://help.launchpad.net/Packaging/PPA&#34; target=&#34;_blank&#34;&gt;Launchpad&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Before installing &lt;code&gt;software-properties-common&lt;/code&gt; package, update the apt package index to download information about the new packages:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once the repository is updated,  we&amp;rsquo;ll install the &lt;code&gt;software-properties-common&lt;/code&gt; package:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install software-properties-common
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This command installs the Software Properties Common package that includes the  add-
-apt-repository binary. Now you are ready to add the custom &lt;strong&gt;PPA&lt;/strong&gt;. Add the repository for Julia and its dependencies:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:staticfloat/juliareleases   
-sudo add-apt-repository ppa:staticfloat/julia-deps
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enter your account password if prompted.&lt;br /&gt;
-Now you are ready to install Julia:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install julia
-sudo apt-get update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The Julia should now be ready to use. You can check the version of Julia:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;julia -v
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Output will be similar to the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;julia version 0.3.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s it! Julia is installed on your server.&lt;/p&gt;
-</description>
-    </item>
+    <lastBuildDate>Mon, 17 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/putty/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to send webpages to VPS using PuTTY</title>

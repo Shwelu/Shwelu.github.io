@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.20" />
+  <meta name="author" content="Shweta Luthra">
+  <meta name="description" content="Co-founder and Principal Analyst">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="https://shwelu.github.io/index.xml" type="application/rss+xml" title="Shweta Luthra">
+  <link rel="feed" href="https://shwelu.github.io/index.xml" type="application/rss+xml" title="Shweta Luthra">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://shwelu.github.io/post/transfer-webpages-to-web-server/">
+
+  
+
+  <title>How to send webpages to VPS using PuTTY | Shweta Luthra</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Shweta Luthra</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">How to send webpages to VPS using PuTTY</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2017-04-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Mon, Apr 17, 2017
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/putty">PuTTY</a
+    >, 
+    
+    <a href="/tags/sftp">sftp</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fshwelu.github.io%2fpost%2ftransfer-webpages-to-web-server%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20to%20send%20webpages%20to%20VPS%20using%20PuTTY&amp;url=https%3a%2f%2fshwelu.github.io%2fpost%2ftransfer-webpages-to-web-server%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fshwelu.github.io%2fpost%2ftransfer-webpages-to-web-server%2f&amp;title=How%20to%20send%20webpages%20to%20VPS%20using%20PuTTY"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fshwelu.github.io%2fpost%2ftransfer-webpages-to-web-server%2f&amp;title=How%20to%20send%20webpages%20to%20VPS%20using%20PuTTY"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20to%20send%20webpages%20to%20VPS%20using%20PuTTY&amp;body=https%3a%2f%2fshwelu.github.io%2fpost%2ftransfer-webpages-to-web-server%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This tutorial will guide you how to serve your webpages or host a static website
+from a VPS with LAMP (or LEMP) stack installed.
+It can be considered as the next step to <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04" target="_blank">this tutorial</a> or <a href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04" target="_blank">this one</a>.</p>
+
+<h3 id="prerequisite">Prerequisite</h3>
+
+<ul>
+<li>A VPS with LAMP (LEMP) stack installed</li>
+<li>username and password for an addon user with sudo user previleges for the VPS</li>
+<li>The tutorial assumes that you know how to connect to the remote server using PuTTY.</li>
+</ul>
+
+<h3 id="step-1-install-putty">Step 1: Install PuTTY</h3>
+
+<p>If you are on windows, you might have used Putty to connect to your VPS.
+However to send the file to the remote server, we need <code>psftp</code> which is a
+putty utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the <code>psftp</code> individually,
+or install the putty binary with all of its utilities included. We will choose the latter for this tutorial.</p>
+
+<p>Go to the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">page</a></p>
+
+<p><img src="(/static/img/images-posts/putty-download-page.jpg)" alt="Putty download page" /></p>
+
+<p>Choose the appropriate binary (32-bit or 64-bit) according to architectue of your Windows.
+If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too.Install the Putty, and make sure the <code>psftp</code> is on the <code>PATH</code>.</p>
+
+<h3 id="transfer-the-files">Transfer the files</h3>
+
+<p>Open cmd on Windows and move to the directory where you have saved your html files</p>
+
+<pre><code>cd C:\path\to\your\html-files
+</code></pre>
+
+<p>and <code>zip</code> your static website files (including the <code>index.html</code>):</p>
+
+<pre><code>C:\path\to\your\html-files&gt;zip -r webpages.zip * 
+</code></pre>
+
+<p>Type <code>psftp</code> on cmd:</p>
+
+<pre><code>C:\path\to\your\html-files&gt;psftp
+</code></pre>
+
+<p>It will launch <code>psftp</code> prompt.</p>
+
+<p><img src="images-posts/cmd-putty.jpg?raw=true" alt="psftp prompt" /></p>
+
+<pre><code>psftp: no hostname specified; use &quot;open host.name&quot; to connect
+psftp&gt; _
+</code></pre>
+
+<p>Enter user_name and server_IP:</p>
+
+<pre><code>psftp&gt; open demo@111.111.111.111
+</code></pre>
+
+<p>You will get the prompt to input the password.</p>
+
+<pre><code>Using username &quot;demo&quot;.
+demo@111.111.111.111's password:
+</code></pre>
+
+<p>Enter the password for the sudo user.
+If authentication is successful, prompt will move to the home directory of the demo user on the remote server.</p>
+
+<pre><code>Remote working directory is /home/demo
+psftp&gt; _
+</code></pre>
+
+<p>Transfer the zip file to the remote server</p>
+
+<pre><code>psftp&gt; put file_name
+</code></pre>
+
+<p>If you get the following output, your zip file has been successfully trasferred to the remote server.</p>
+
+<pre><code>local:file_name =&gt; remote:/home/demo/file_name
+psftp&gt;
+</code></pre>
+
+<p>you can see the zip file in the directory:</p>
+
+<pre><code>psftp&gt;DIR
+</code></pre>
+
+<p>output will be similar to the following.</p>
+
+<pre><code>...
+
+d----         26-Apr-17   9:21 PM            python                            
+-a---         30-Apr-17   9:21 PM       1568 index.xml                         
+-a---         06-May-17   2:04 PM      31896 webpages.zip
+...
+</code></pre>
+
+<h3 id="move-the-zip-file-to-the-webroot-directory">Move the zip file to the webroot directory</h3>
+
+<p>Now connect to the remote server using PuTTY</p>
+
+<p><img src="(/static/img/images-posts/putty-terminal.jpg)" alt="putty-terminal" />
+and move the zip file to the  webroot directory</p>
+
+<pre><code> mv webpages.zip /var/www/html/
+ cd /var/www/html/
+</code></pre>
+
+<p>Change the name of the already existing index.html file</p>
+
+<pre><code>mv index.html index1.html
+</code></pre>
+
+<p>Now unzip the zip file</p>
+
+<pre><code>unzip webpages.zip
+</code></pre>
+
+<p>Test your site by typing the <code>http://ip_address</code> of the server in the browser.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+
+    
+    <li class="next"><a href="https://shwelu.github.io/post/install-julia-on-debian/">How to install Julia on Debian 8.5 <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Shweta Luthra &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+
