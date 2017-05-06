@@ -92,17 +92,17 @@ It can be considered as the next step to &lt;a href=&#34;https://www.digitalocea
 
 &lt;h3 id=&#34;step-1-install-putty&#34;&gt;Step 1: Install PuTTY&lt;/h3&gt;
 
-&lt;p&gt;If you are on windows, you might have used Putty to connect to your VPS.
-However to send the file to the remote server, we need &lt;code&gt;psftp&lt;/code&gt; which is a
-putty utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the &lt;code&gt;psftp&lt;/code&gt; individually,
-or install the putty binary with all of its utilities included. We will choose the latter for this tutorial.&lt;/p&gt;
+&lt;p&gt;If you are on Windows, you might have used Putty to connect to your VPS.
+However, to send the file to the remote server, we need &lt;code&gt;psftp&lt;/code&gt; which is a
+PuTTY utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the &lt;code&gt;psftp&lt;/code&gt; individually,
+or install the PuTTY  binary with all of its utilities included. We will choose the latter for this tutorial.&lt;/p&gt;
 
 &lt;p&gt;Go to the &lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html&#34; target=&#34;_blank&#34;&gt;page&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;(/static/img/images-posts/putty-download-page.jpg)&#34; alt=&#34;Putty download page&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Choose the appropriate binary (32-bit or 64-bit) according to architectue of your Windows.
-If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too.Install the Putty, and make sure the &lt;code&gt;psftp&lt;/code&gt; is on the &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
+If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too. Install the Putty, and make sure the &lt;code&gt;psftp&lt;/code&gt; is on the &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;transfer-the-files&#34;&gt;Transfer the files&lt;/h3&gt;
 
@@ -129,7 +129,7 @@ If you do not know which one to use, download 32-bit as 64-bit Windows supports 
 psftp&amp;gt; _
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Enter user_name and server_IP:&lt;/p&gt;
+&lt;p&gt;Enter &lt;strong&gt;user_name&lt;/strong&gt; (for example &lt;strong&gt;demo&lt;/strong&gt;) and &lt;strong&gt;server_IP&lt;/strong&gt; (for example &lt;strong&gt;111.111.111.111&lt;/strong&gt;):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;psftp&amp;gt; open demo@111.111.111.111
 &lt;/code&gt;&lt;/pre&gt;
@@ -149,12 +149,12 @@ psftp&amp;gt; _
 
 &lt;p&gt;Transfer the zip file to the remote server&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;psftp&amp;gt; put file_name
+&lt;pre&gt;&lt;code&gt;psftp&amp;gt; put webpages.zip
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If you get the following output, your zip file has been successfully trasferred to the remote server.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;local:file_name =&amp;gt; remote:/home/demo/file_name
+&lt;pre&gt;&lt;code&gt;local:webpages.zip =&amp;gt; remote:/home/demo/webpages.zip
 psftp&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -178,7 +178,7 @@ d----         26-Apr-17   9:21 PM            python
 &lt;p&gt;Now connect to the remote server using PuTTY&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;(/static/img/images-posts/putty-terminal.jpg)&#34; alt=&#34;putty-terminal&#34; /&gt;
-and move the zip file to the  webroot directory&lt;/p&gt;
+and move the zip file to the webroot directory&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; mv webpages.zip /var/www/html/
  cd /var/www/html/
@@ -194,7 +194,7 @@ and move the zip file to the  webroot directory&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;unzip webpages.zip
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Test your site by typing the &lt;code&gt;http://ip_address&lt;/code&gt; of the server in the browser.&lt;/p&gt;
+&lt;p&gt;Test your site by typing the &lt;code&gt;http://server_IP&lt;/code&gt; in the browser.&lt;/p&gt;
 </description>
     </item>
     

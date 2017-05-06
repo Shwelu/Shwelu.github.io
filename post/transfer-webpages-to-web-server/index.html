@@ -208,17 +208,17 @@ It can be considered as the next step to <a href="https://www.digitalocean.com/c
 
 <h3 id="step-1-install-putty">Step 1: Install PuTTY</h3>
 
-<p>If you are on windows, you might have used Putty to connect to your VPS.
-However to send the file to the remote server, we need <code>psftp</code> which is a
-putty utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the <code>psftp</code> individually,
-or install the putty binary with all of its utilities included. We will choose the latter for this tutorial.</p>
+<p>If you are on Windows, you might have used Putty to connect to your VPS.
+However, to send the file to the remote server, we need <code>psftp</code> which is a
+PuTTY utility used to securly transfer file to the remote server. It can be considered as CLI alternative to the FileZilla (familiar to those coming from a shared hosting environment). You can either install the <code>psftp</code> individually,
+or install the PuTTY  binary with all of its utilities included. We will choose the latter for this tutorial.</p>
 
 <p>Go to the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">page</a></p>
 
 <p><img src="(/static/img/images-posts/putty-download-page.jpg)" alt="Putty download page" /></p>
 
 <p>Choose the appropriate binary (32-bit or 64-bit) according to architectue of your Windows.
-If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too.Install the Putty, and make sure the <code>psftp</code> is on the <code>PATH</code>.</p>
+If you do not know which one to use, download 32-bit as 64-bit Windows supports the installation of the 32-bit apps too. Install the Putty, and make sure the <code>psftp</code> is on the <code>PATH</code>.</p>
 
 <h3 id="transfer-the-files">Transfer the files</h3>
 
@@ -245,7 +245,7 @@ If you do not know which one to use, download 32-bit as 64-bit Windows supports 
 psftp&gt; _
 </code></pre>
 
-<p>Enter user_name and server_IP:</p>
+<p>Enter <strong>user_name</strong> (for example <strong>demo</strong>) and <strong>server_IP</strong> (for example <strong>111.111.111.111</strong>):</p>
 
 <pre><code>psftp&gt; open demo@111.111.111.111
 </code></pre>
@@ -265,12 +265,12 @@ psftp&gt; _
 
 <p>Transfer the zip file to the remote server</p>
 
-<pre><code>psftp&gt; put file_name
+<pre><code>psftp&gt; put webpages.zip
 </code></pre>
 
 <p>If you get the following output, your zip file has been successfully trasferred to the remote server.</p>
 
-<pre><code>local:file_name =&gt; remote:/home/demo/file_name
+<pre><code>local:webpages.zip =&gt; remote:/home/demo/webpages.zip
 psftp&gt;
 </code></pre>
 
@@ -294,7 +294,7 @@ d----         26-Apr-17   9:21 PM            python
 <p>Now connect to the remote server using PuTTY</p>
 
 <p><img src="(/static/img/images-posts/putty-terminal.jpg)" alt="putty-terminal" />
-and move the zip file to the  webroot directory</p>
+and move the zip file to the webroot directory</p>
 
 <pre><code> mv webpages.zip /var/www/html/
  cd /var/www/html/
@@ -310,7 +310,7 @@ and move the zip file to the  webroot directory</p>
 <pre><code>unzip webpages.zip
 </code></pre>
 
-<p>Test your site by typing the <code>http://ip_address</code> of the server in the browser.</p>
+<p>Test your site by typing the <code>http://server_IP</code> in the browser.</p>
 
     </div>
   </div>
